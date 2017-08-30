@@ -1,9 +1,14 @@
 import AppBase from 'components/scripts/index';
+import {
+  HashRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import Comp1 from './comp1';
-import AForm from './a-form';
 import Login from './login';
 import Test1 from './test1';
-import testImg from 'images/QQ20170829-204759@2x.png';
+import AForm from './a-form';
 
 export default class extends AppBase {
 
@@ -32,7 +37,6 @@ export default class extends AppBase {
   }
 
 
-
   @autobind
   _onClick() {
     let {test} = AppBase.$.local;
@@ -46,18 +50,19 @@ export default class extends AppBase {
   }
 
   render() {
-    const {test} = AppBase.$.local;
     return (
-      <div className="blank-module-view">
-        member-list.1212...{test}
-        <Comp1 />
-        <div className="blank-20"></div>
-        <Login />
-        <div className="blank-20"></div>
-        <img className="wp-10" src={testImg} alt=""/>
-        <button className="dc-button" onClick={this._onClick}>TEST</button>
-      </div>
+      <Router>
+        <section className="route-wrapper">
+          <ul>
+            <li><Link replace to="/comp1">Comp1</Link></li>
+            <li><Link replace to="/login">Login</Link></li>
+          </ul>
+          <Route path="/" component={Test1}/>
+          <Route exact path="/" component={AForm}/>
+          <Route path="/comp1" component={Comp1}/>
+          <Route path="/login" component={Login}/>
+        </section>
+      </Router>
     );
   }
-
 }

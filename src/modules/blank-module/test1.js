@@ -13,7 +13,7 @@ export default class extends React.Component {
     console.log('render...');
     const {ts} = AppBase.$.memory;
     return (
-      <h1>TS: {ts}</h1>
+      <h1>I am test1 component , everybody can see me! TS: {ts}</h1>
     )
   }
 }
