@@ -3,6 +3,7 @@ import Comp1 from './comp1';
 import AForm from './a-form';
 import Login from './login';
 import Test1 from './test1';
+import testImg from 'images/QQ20170829-204759@2x.png';
 
 export default class extends AppBase {
 
@@ -50,7 +51,10 @@ export default class extends AppBase {
       <div className="blank-module-view">
         member-list.1212...{test}
         <Comp1 />
+        <div className="blank-20"></div>
         <Login />
+        <div className="blank-20"></div>
+        <img className="wp-10" src={testImg} alt=""/>
         <button className="dc-button" onClick={this._onClick}>TEST</button>
       </div>
     );

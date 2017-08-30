@@ -1,6 +1,6 @@
 import AppBase from 'components/scripts/index';
 
-export default class extends React.PureComponent {
+export default class extends React.Component {
   render() {
     console.log('comp1 render...');
     return (
