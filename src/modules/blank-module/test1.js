@@ -1,5 +1,6 @@
 import {Card} from 'antd';
 import AppBase from 'components/scripts/index';
+import {$api} from 'services/api';
 
 
 export default class extends React.Component {
@@ -8,6 +9,16 @@ export default class extends React.Component {
   shouldComponentUpdate(){
     return true;
   }
+
+
+  componentWillMount() {
+    $api.xxDate().then((response)=>{
+      AppBase.$.memory = {
+        username: response.username
+      }
+    });
+  }
+
 
   render() {
     console.log('render...');
