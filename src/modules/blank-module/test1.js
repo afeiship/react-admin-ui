@@ -5,6 +5,11 @@ import {$api} from 'services/api';
 
 export default class extends React.Component {
   static displayName = 'Test1';
+  static initialState =  {
+    memory:{
+      username: ''
+    }
+  };
 
   shouldComponentUpdate(){
     return true;
@@ -12,7 +17,7 @@ export default class extends React.Component {
 
 
   componentWillMount() {
-    $api.xxDate().then((response)=>{
+    $api.apiInterface().then((response)=>{
       AppBase.$.memory = {
         username: response.username
       }
