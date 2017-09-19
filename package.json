@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "config": {
-    "spa": false,
+    "spa": true,
     "cdnUrl": "",
     "dllManifest": "../dist/vendors/manifest.json",
     "extractCssName": "[name]-[chunkhash:6].css",
@@ -34,9 +34,9 @@
     ],
     "entry": {
       "development": [
-        "src/modules/blank-module/index.js"
+        "src/modules/app/index.js"
       ],
-      "production": "src/modules/**/index.js"
+      "production": "src/modules/app/index.js"
     },
     "devServer": {
       "port": 8812,
