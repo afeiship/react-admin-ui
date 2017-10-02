@@ -21,6 +21,7 @@
           "bower_components": "./bower_components",
           "components": "./src/components",
           "modules": "./src/modules",
+          "services": "./src/components/services",
           "images": "./src/assets/images"
         }
       }

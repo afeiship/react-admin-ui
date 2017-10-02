@@ -17,11 +17,12 @@ export default class extends React.Component {
 
 
   componentWillMount() {
-    $api.apiInterface().then((response)=>{
-      AppBase.$.memory = {
-        username: response.username
-      }
-    });
+    console.log('will mount!');
+    // $api.apiInterface().then((response)=>{
+    //   AppBase.$.memory = {
+    //     username: response.username
+    //   }
+    // });
   }
 
 
