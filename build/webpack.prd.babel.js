@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import webpackMerge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import HtmlWebpackPugPlugin from 'html-webpack-pug-plugin';
 import webpackEntries from 'webpack-entries';
 import nx from 'next-js-core2';
 import pkg from '../package.json';
@@ -11,7 +10,7 @@ import $ from './webpack.base.babel';
 
 const entry = webpackEntries(pkg.config.entry.production);
 let productEntries = {};
-let productPlugins = [ new HtmlWebpackPugPlugin() ];
+let productPlugins = [  ];
 
 const sliceKey = function (inKey) {
   return pkg.config.spa ? 'index' : inKey.slice(('src/modules/').length);
@@ -37,7 +36,7 @@ Object.keys(entry).forEach(function (name) {
       new HtmlWebpackPlugin(
         nx.mix(config.htmlWebpackOptions, {
           filename: sliceKey(name) + '.html',
-          template: name + '.jade',
+          template: name + '.ejs',
           minify: false,
           chunks: [
             pkg.config.vendorName,

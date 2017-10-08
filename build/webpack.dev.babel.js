@@ -17,7 +17,7 @@ nx.each(entry, function (name) {
       new HtmlWebpackPlugin(
         nx.mix(config.htmlWebpackOptions, {
           filename: name + '.html',
-          template: name + '.jade',
+          template: name + '.ejs',
           chunks: [pkg.config.vendorName, name]
         })
       )

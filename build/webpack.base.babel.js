@@ -111,13 +111,6 @@ export default {
         test: /\.js|jsx$/,
         loaders: ['react-hot'],
         include: path.join(__dirname, 'js')
-      },
-      {
-        test: /\.jade$/,
-        loader: 'jade-loader',
-        query: {
-          pretty: true
-        }
       }
     ]
   },
