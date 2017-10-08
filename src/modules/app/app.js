@@ -7,6 +7,9 @@ import {
 
 import Login from './login';
 import Admin from './admin';
+import UserIndex from './admin/users/index';
+import OrderIndex from './admin/orders/index';
+import AdIndex from './admin/ads/index';
 
 export default class extends AppBase {
 
@@ -23,8 +26,11 @@ export default class extends AppBase {
     return (
       <Router>
         <section className="route-wrapper">
-          <Route path="/login" component={Login}/>
+          <Route exact path="/" component={Login}/>
           <Route path="/admin" component={Admin}/>
+          <Route path="/admin/users/index" component={UserIndex}/>
+          <Route path="/admin/orders/index" component={OrderIndex}/>
+          <Route path="/admin/ads/index" component={AdIndex}/>
         </section>
       </Router>
     );

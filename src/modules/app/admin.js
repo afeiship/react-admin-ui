@@ -14,10 +14,16 @@ import ReactStatusManager from 'react-status-manager';
 
 export default class extends React.Component {
 
-  state = {
-    collapsed: false,
-    activeRoute: '/admin/users/index'
-  };
+  constructor(props) {
+    super(props);
+    const {location} = props;
+
+    console.log(location);
+    this.state = {
+      collapsed: false,
+      activeRoute: location.pathname
+    };
+  }
 
   toggle = () => {
     this.setState({
@@ -26,10 +32,11 @@ export default class extends React.Component {
   };
 
   _onMenuClick = e => {
-    console.log(e);
-    this.setState({
-      activeRoute: e.key
-    })
+    console.log('menu click: e:->', e);
+    const {history} = this.props;
+    this.setState({activeRoute: e.key}, () => {
+      history.push(e.key);
+    });
   };
 
   render() {
@@ -40,8 +47,7 @@ export default class extends React.Component {
           collapsedWidth="0"
           onCollapse={(collapsed, type) => {
             console.log(collapsed, type);
-          }}
-        >
+          }}>
           <div className="p10 logo mb30">
             <h1 className="c-f">tradewow</h1>
             <h3 className="c-e">后台管理</h3>
@@ -66,11 +72,12 @@ export default class extends React.Component {
           <Header style={{background: '#fff', padding: 0}}/>
           <Content style={{margin: '24px 16px 0'}}>
             <ReactStatusManager style={{padding: 24, background: '#fff', minHeight: 360}}
-                                status={this.state.activeRoute} statusList={[
-              '/admin/users/index',
-              '/admin/orders/index',
-              '/admin/ads/index',
-            ]}>
+                                status={this.state.activeRoute}
+                                statusList={[
+                                  '/admin/users/index',
+                                  '/admin/orders/index',
+                                  '/admin/ads/index',
+                                ]}>
               <span>usrs</span>
               <span>orders</span>
               <span>ads</span>

@@ -59,7 +59,7 @@ export default class extends React.Component {
   }
 
   render() {
-    console.log('users/index.');
+    console.log('ads/index.');
     return (
       <Table columns={columns} dataSource={data}/>
     );
