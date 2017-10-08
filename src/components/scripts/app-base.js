@@ -1,18 +1,12 @@
 import nx from 'next-js-core2';
 import {ReduxAppBase} from 'next-react-redux';
-import 'next-hashlize';
-
+import {notification} from 'antd';
 
 export default class extends ReduxAppBase {
-  constructor(props) {
-    super(props);
-
-    nx.mix(this, {
-      $: props.$,
-      $hash: nx.hashlize()
+  static message(inMsg, inType) {
+    notification[inType || 'info']({
+      message: '提示',
+      description: inMsg
     });
-
-    //fastclick:
-    // FastClick.attach(document.body);
   }
 }

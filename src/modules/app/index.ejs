@@ -2,19 +2,19 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>test-fragment</title>
+    <title>Tradewow-Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <% for (var css in htmlWebpackPlugin.files.css) { %>
     <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
     <% } %>
 </head>
 <body>
-    <main id="app">
+<main id="app">
 
-    </main>
-    <script type="text/javascript" src="<%=htmlWebpackPlugin.options.data.vendors %>"></script>
-    <% for (var js in htmlWebpackPlugin.files.js) { %>
-    <script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[js] %>"></script>
-    <% } %>
+</main>
+<script type="text/javascript" src="<%=htmlWebpackPlugin.options.data.vendors %>"></script>
+<% for (var js in htmlWebpackPlugin.files.js) { %>
+<script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[js] %>"></script>
+<% } %>
 </body>
 </html>

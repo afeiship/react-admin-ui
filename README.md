@@ -8,6 +8,7 @@
 
 ## resources:
 + https://reacttraining.com/react-router/web/guides/philosophy
++ http://localhost:8814/src/modules/app/#/login
 
 ## dev propxy:
 ```json

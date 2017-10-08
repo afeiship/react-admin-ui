@@ -1,14 +1,7 @@
-const env = '__BUILD_ENV__';
-const CONFIG = require(`../configs/${env}`).default;
-
-// console.log(`load config env=${env}...`, CONFIG);
-
 export default class {
+
   static VERSION = '__BUILD_VERSION__';
-  static ENV = env;
-  static WX_DEBUG = CONFIG.WX_DEBUG;
-  static IMG_URL = CONFIG.IMG_URL;
-  static SERVER_URL = 'http://demo.com';
+  static SERVER_URL = 'http://120.27.13.225';
 
   static APIS = {
     baseUrl: '/api/v1',
