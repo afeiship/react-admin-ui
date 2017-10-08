@@ -1,32 +1,28 @@
-/**
- * Created by feizheng on 3/27/17.
- */
-
-const env = '__BUILD_ENV__';
-const CONFIG = require(`../configs/${env}`).default;
-
-// console.log(`load config env=${env}...`, CONFIG);
-
 export default class {
+
   static VERSION = '__BUILD_VERSION__';
-  static ENV = env;
-  static WX_DEBUG = CONFIG.WX_DEBUG;
-  static IMG_URL = CONFIG.IMG_URL;
+  static SERVER_URL = 'http://120.27.13.225';
 
-  static API_WITH_TOKEN = {
-    baseUrl: '/api/wp/pmall/',
-    items: [
-      'test1',
-      'loginByPublic_100'
-    ]
+  static APIS = {
+    baseUrl: '/api/v1',
+    items: {
+      'upload': ['post', '/system/upload'],
+      'signin': ['post', '/auth/signin'],
+
+      'user_get': ['get', '/auth/admin/user'],
+      'user_create': ['post', '/auth/admin/user'],
+      'user_delete': ['delete', '/auth/admin/user/{id}'],
+      'user_update': ['post', '/auth/admin/user/{id}'],
+
+      'query_permission_delete': ['delete', '/account/permission/{id}'],
+      'query_permission_create': ['post', '/account/permission'],
+
+      'banner_get': ['get', '/system/banner'],
+      'banner_create': ['post', '/system/banners'],
+      'banner_delete': ['delete', '/system/banner/{id}'],
+      'banner_update': ['put', '/system/banner/{id}'],
+    }
   };
-
-  static API_WITHOUT_TOKEN = {
-    baseUrl: '/api/wp/',
-    items: [
-      'setMyPhone_100'
-    ]
-  }
 }
 
 
